@@ -37,16 +37,13 @@ const Home = () => {
           {/* Sticker peeking over the top edge of the card */}
           <img src="/sakumanga.png" alt="" className="hero-sticker" />
           <p className="section-label">Mission Briefing</p>
-          <h2 className="hero-info-title">Hi, I'm Janhavi 👋</h2>
+          <h2 className="hero-info-title">Hi, I'm Janhavi</h2>
           <p>
-            I'm a frontend developer who spends as much time looking up at the
-            night sky as at a code editor. I build interfaces that feel alive,
-            and I'm especially drawn to the place where artificial intelligence
-            meets the study of the universe.
+            I'm an IT undergrad at SPPU trynna test the waters of the tech world. I dabbled in frontend development back in school, spent my first three years of college exploring AI/ML and Data Science, and now I'm diving into Software Development.  I love to explore a lot. I tend to resemble a butterfly the way I flutter from one interest to another.
           </p>
           <div className="intro-buttons">
-            <a href="#projects" className="btn-primary">
-              View Projects
+            <a href="#about" className="btn-primary">
+              Know Me
             </a>
             <a href="#contact" className="btn-outline">
               Contact Me
