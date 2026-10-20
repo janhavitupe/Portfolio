@@ -191,6 +191,27 @@ a {
   filter: drop-shadow(0 0 8px rgba(125, 175, 255, 0.6));
 }
 
+/* Picture icons (like the rocket) are sized to match the emoji icons */
+.hero-card-image {
+  height: 2.25rem;
+  width: auto;
+  transition: transform 0.4s ease;
+}
+
+/* The rocket lifts off a little when its card is hovered */
+.hero-card:hover .hero-card-image {
+  transform: translateY(-4px);
+}
+
+/* Picture used like an emoji inside a card title */
+.title-emoji {
+  display: inline-block;
+  height: 2.4em;
+  width: auto; /* keeps the picture's own rectangular shape */
+  margin: 0 0.15em 0 0.3em;
+  vertical-align: middle;
+}
+
 .hero-card-title {
   display: block;
   font-family: var(--font-display);
@@ -628,6 +649,78 @@ a {
     transform: scale(1.4);
     opacity: 0;
   }
+}
+
+/* Placeholder pages opened by the homepage cards */
+.card-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem 1.25rem;
+}
+
+.card-page-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 600px;
+  width: 100%;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.card-page-icon {
+  font-size: 3.5rem;
+}
+
+.card-page-icon .hero-card-image {
+  height: 5rem;
+}
+
+.card-page-title {
+  margin-bottom: 0;
+}
+
+.card-page-text {
+  color: #d4d4d8;
+  font-size: 1.1rem;
+}
+
+.card-page-soon {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Hyperspace warp video shown between pages */
+.warp-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000; /* above everything except the Saturn cursor */
+  background: #000;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.warp-overlay canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.warp-overlay.playing {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* blocks clicks while warping */
+}
+
+.warp-overlay.fading {
+  visibility: visible;
+  opacity: 0;
+  transition: opacity var(--warp-fade) ease;
 }
 
 /* Footer */

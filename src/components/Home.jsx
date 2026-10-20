@@ -1,12 +1,7 @@
 import React from "react";
-
-// The four quick-link cards in the right-hand panel
-const CARDS = [
-  { icon: "🪐", title: "Mission Log", text: "Projects I've launched", href: "#projects" },
-  { icon: "✦", title: "Skills in Orbit", text: "Tools I build with", href: "#about" },
-  { icon: "🔭", title: "Exploring", text: "Where AI meets astrophysics", href: "#about" },
-  { icon: "📡", title: "Open Channel", text: "Send me a signal", href: "#contact" },
-];
+import { Link } from "react-router-dom";
+import { CARDS } from "../cards";
+import { CardIcon, CardTitle } from "./CardBits";
 
 const Home = () => {
   return (
@@ -53,15 +48,15 @@ const Home = () => {
 
         <div className="hero-cards">
           {CARDS.map((card) => (
-            <a key={card.title} href={card.href} className="glass-card hero-card">
-              <span className="hero-card-icon" aria-hidden="true">
-                {card.icon}
-              </span>
+            <Link key={card.path} to={card.path} className="glass-card hero-card">
+              <CardIcon card={card} />
               <span>
-                <span className="hero-card-title">{card.title}</span>
+                <span className="hero-card-title">
+                  <CardTitle card={card} />
+                </span>
                 <span className="hero-card-text">{card.text}</span>
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
