@@ -104,10 +104,6 @@
         "title": "AI / Machine Learning",
         "items": [
           "Scikit-learn",
-          "LightGBM",
-          "Random Forest",
-          "Isolation Forest",
-          "Deep Q-Networks (DQN)",
           "Sentence Transformers",
           "LLMs",
           "AI Agents",
@@ -148,7 +144,9 @@
         "items": [
           "React",
           "Next.js",
-          "Tailwind CSS"
+          "Tailwind CSS",
+          "Vue.js",
+          "Angular"
         ]
       },
       {
