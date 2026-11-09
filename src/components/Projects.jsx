@@ -2,7 +2,8 @@ import React from "react";
 import content from "../content.json";
 
 // Projects live in src/content.json. Edit them from /admin while running `npm run dev`.
-// Leave `link` empty to hide the button; set `image` to show a picture instead of a planet.
+// The button uses the project's first link (none = no button); set `image` to show a
+// picture instead of a planet. The full list, with screenshots, is on /mission-log.
 const PROJECTS = content.projects;
 
 const Projects = () => {
@@ -26,14 +27,14 @@ const Projects = () => {
                 <li key={tag}>{tag}</li>
               ))}
             </ul>
-            {project.link && (
+            {project.links[0] && (
               <a
-                href={project.link}
+                href={project.links[0].url}
                 target="_blank"
                 rel="noreferrer"
                 className="btn-outline project-link"
               >
-                View Project
+                {project.links[0].label || "View Project"}
               </a>
             )}
           </article>

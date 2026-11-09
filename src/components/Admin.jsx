@@ -8,7 +8,7 @@ import { ICONS } from "./arsenalIcons";
 // Visitors to the deployed site never get this page.
 
 const PLANETS = ["jupiter", "neptune", "mars"];
-const EMPTY_PROJECT = { title: "", description: "", tags: [], link: "", planet: "neptune", image: "" };
+const EMPTY_PROJECT = { title: "", description: "", tags: [], planet: "neptune", image: "", links: [], screenshots: [] };
 const EMPTY_ARSENAL_CARD = { icon: "sparkles", title: "", color: "#7dafff", items: [] };
 
 // Text box + button that adds one item to a list (Enter also adds)
@@ -134,6 +134,26 @@ const Admin = () => {
     set(keys, next);
   };
 
+  // Upload several screenshots at once and add them to the project
+  const addScreenshots = async (i, fileList) => {
+    const files = [...fileList];
+    if (!files.length) return;
+    setStatus(`Uploading ${files.length} screenshot${files.length > 1 ? "s" : ""}…`);
+    try {
+      const urls = [];
+      for (const file of files) urls.push(await uploadImage(file));
+      setContent((prev) => {
+        const next = structuredClone(prev);
+        next.projects[i].screenshots.push(...urls);
+        return next;
+      });
+      setDirty(true);
+      setStatus("Screenshots uploaded. Remember to save.");
+    } catch (err) {
+      setStatus(`Upload failed: ${err.message}`);
+    }
+  };
+
   const pickProjectImage = async (i, file) => {
     if (!file) return;
     setStatus("Uploading image…");
@@ -180,35 +200,6 @@ const Admin = () => {
           value={about.paragraphs.join("\n\n")}
           onChange={(v) => set(["about", "paragraphs"], v.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean))}
         />
-
-        <h3>Skills</h3>
-        <ul className="admin-list">
-          {about.skills.map((skill, i) => (
-            <li key={i} className="admin-row">
-              <input
-                type="color"
-                value={skill.color}
-                onChange={(e) => set(["about", "skills", i, "color"], e.target.value)}
-                aria-label="Skill colour"
-              />
-              <input
-                value={skill.name}
-                placeholder="Skill name"
-                onChange={(e) => set(["about", "skills", i, "name"], e.target.value)}
-              />
-              <button type="button" onClick={() => moveItem(about.skills, ["about", "skills"], i, -1)} aria-label="Move up">↑</button>
-              <button type="button" onClick={() => moveItem(about.skills, ["about", "skills"], i, 1)} aria-label="Move down">↓</button>
-              <button type="button" className="admin-danger" onClick={() => set(["about", "skills"], about.skills.filter((_, j) => j !== i))}>Remove</button>
-            </li>
-          ))}
-        </ul>
-        <button
-          type="button"
-          className="admin-add"
-          onClick={() => set(["about", "skills"], [...about.skills, { name: "", color: "#7dafff" }])}
-        >
-          + Add skill
-        </button>
       </section>
 
       {/* Technical Arsenal */}
@@ -351,7 +342,57 @@ const Admin = () => {
               onChange={(v) => set(["projects", i, "tags"], v.split(",").map((t) => t.trimStart()))}
               onBlur={() => set(["projects", i, "tags"], project.tags.map((t) => t.trim()).filter(Boolean))}
             />
-            <Field label="Link (leave empty to hide the button)" value={project.link} placeholder="https://…" onChange={(v) => set(["projects", i, "link"], v)} />
+            <div className="admin-field">
+              <span>Links (the first one is also the button on the homepage)</span>
+              <ul className="admin-list">
+                {project.links.map((link, j) => (
+                  <li key={j} className="admin-row">
+                    <input
+                      value={link.label}
+                      placeholder="Label, e.g. GitHub"
+                      className="admin-link-label"
+                      onChange={(e) => set(["projects", i, "links", j, "label"], e.target.value)}
+                    />
+                    <input
+                      value={link.url}
+                      placeholder="https://…"
+                      onChange={(e) => set(["projects", i, "links", j, "url"], e.target.value)}
+                    />
+                    <button type="button" className="admin-danger" onClick={() => set(["projects", i, "links"], project.links.filter((_, k) => k !== j))}>
+                      Remove
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <button
+                type="button"
+                className="admin-add"
+                onClick={() => set(["projects", i, "links"], [...project.links, { label: "", url: "" }])}
+              >
+                + Add link
+              </button>
+            </div>
+
+            <div className="admin-field">
+              <span>Screenshots (shown scattered on the Mission Log page, click to enlarge)</span>
+              {project.screenshots.length > 0 && (
+                <ul className="admin-shots">
+                  {project.screenshots.map((src, j) => (
+                    <li key={j}>
+                      <img src={src} alt="" />
+                      <button
+                        type="button"
+                        aria-label="Remove screenshot"
+                        onClick={() => set(["projects", i, "screenshots"], project.screenshots.filter((_, k) => k !== j))}
+                      >
+                        ×
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <input type="file" accept="image/*" multiple onChange={(e) => addScreenshots(i, e.target.files)} />
+            </div>
             <div className="admin-row">
               <label className="admin-field admin-inline">
                 <span>Planet</span>

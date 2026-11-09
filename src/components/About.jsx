@@ -11,7 +11,7 @@ const About = () => {
       <p className="section-label">01 · Origin Story</p>
       <h2 className="section-title">About Me</h2>
 
-      <div className="glass-card about-card about-card-plain">
+      <div className="glass-card about-card">
         {/* Sasuke sitting on the card's top edge */}
         <img src="/download_wipe_bg%20(1).png" alt="" className="about-sticker" />
         {PARAGRAPHS.map((text, i) => (

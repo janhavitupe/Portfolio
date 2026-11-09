@@ -7,6 +7,7 @@ import Arsenal from "./components/Arsenal";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import CardPage from "./components/CardPage";
+import ProjectsPage from "./components/ProjectsPage";
 import SaturnCursor from "./components/SaturnCursor";
 import WarpTransition from "./components/WarpTransition";
 import { CARDS } from "./cards";
@@ -15,9 +16,13 @@ import { CARDS } from "./cards";
 // so the editor is stripped from the published site and visitors can only view.
 const Admin = import.meta.env.DEV ? lazy(() => import("./components/Admin")) : null;
 
+// Cards whose page is built; the rest show the "coming soon" CardPage
+const CARD_PAGES = { "/mission-log": ProjectsPage };
+
 function App() {
   return (
-    <div className="relative w-full min-h-screen overflow-x-hidden text-white font-sans">
+    // overflow-x-clip (not hidden) so position: sticky still works inside pages
+    <div className="relative w-full min-h-screen overflow-x-clip text-white font-sans">
       {/* Background layers stay on screen across pages: galaxy glow, then the starfield */}
       <div className="galaxy" aria-hidden="true">
         <div className="galaxy-band" />
@@ -32,9 +37,16 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         {/* One page per homepage card */}
-        {CARDS.map((card) => (
-          <Route key={card.path} path={card.path} element={<CardPage card={card} />} />
-        ))}
+        {CARDS.map((card) => {
+          const Page = CARD_PAGES[card.path];
+          return (
+            <Route
+              key={card.path}
+              path={card.path}
+              element={Page ? <Page /> : <CardPage card={card} />}
+            />
+          );
+        })}
         {Admin && (
           <Route
             path="/admin"

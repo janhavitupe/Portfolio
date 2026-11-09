@@ -10,40 +10,6 @@
       "I'm Janhavi, a final-year Information Technology engineering student and software developer who enjoys building things that sit at the intersection of engineering, data and intelligence.",
       "My interests lie in backend engineering, distributed systems, applied machine learning and AI-powered applications. I enjoy working on problems that require more than just implementing a feature — understanding the underlying system, figuring out how its components interact, and designing solutions that are reliable, scalable and practical.",
       "I'm constantly learning, building and questioning how things can be made better. For me, engineering is as much about understanding problems as it is about writing code."
-    ],
-    "skills": [
-      {
-        "name": "React",
-        "color": "#61dafb"
-      },
-      {
-        "name": "JavaScript",
-        "color": "#f7df1e"
-      },
-      {
-        "name": "Tailwind CSS",
-        "color": "#38bdf8"
-      },
-      {
-        "name": "Python",
-        "color": "#ffd43b"
-      },
-      {
-        "name": "FastAPI",
-        "color": "#22c55e"
-      },
-      {
-        "name": "Streamlit",
-        "color": "#ff4b4b"
-      },
-      {
-        "name": "Generative AI",
-        "color": "#c084fc"
-      },
-      {
-        "name": "Astrophysics",
-        "color": "#7dafff"
-      }
     ]
   },
   "arsenal": {
@@ -194,40 +160,114 @@
   },
   "projects": [
     {
-      "title": "SIH26043 — Problem Routing AI",
-      "description": "Smart India Hackathon platform that crowdsources societal challenges and uses AI to classify, prioritise, de-duplicate and route them to the right universities and industry partners.",
+      "title": "EcoTrack",
+      "description": "A satellite-based research project that estimates urban CO₂ levels across Pune.",
       "tags": [
-        "Python",
-        "FastAPI",
-        "Streamlit",
-        "Gemini"
+        "Research",
+        "In progress"
       ],
-      "link": "",
-      "planet": "jupiter",
-      "image": ""
-    },
-    {
-      "title": "Cosmic Portfolio",
-      "description": "This site! A space-themed portfolio with a live starfield, shooting stars, a drifting nebula and a spinning Saturn cursor.",
-      "tags": [
-        "React",
-        "Vite",
-        "Tailwind",
-        "tsParticles"
-      ],
-      "link": "",
       "planet": "neptune",
-      "image": ""
+      "image": "",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/janhavitupe/ecotrack"
+        }
+      ],
+      "screenshots": [
+        "/uploads/projects/ecotrack-desk-1.webp",
+        "/uploads/projects/ecotrack-desk-2.webp",
+        "/uploads/projects/ecotrack-desk-3.webp"
+      ]
     },
     {
-      "title": "Next Mission",
-      "description": "Something new is on the launch pad. Check back soon to see what's landed here.",
+      "title": "CO₂ Training-Strategy Study",
+      "description": "A modeling project that compares rotation and seasonal-swapping training strategies for CO₂ prediction.",
       "tags": [
-        "Coming soon"
+        "Research",
+        "In progress"
       ],
-      "link": "",
       "planet": "mars",
-      "image": ""
+      "image": "",
+      "links": [],
+      "screenshots": []
+    },
+    {
+      "title": "SamasyaLink",
+      "description": "An AI platform that matches civic problems to the right people or organisations.",
+      "tags": [
+        "PostgreSQL",
+        "AWS S3",
+        "AWS Lambda"
+      ],
+      "planet": "jupiter",
+      "image": "",
+      "links": [
+        {
+          "label": "Live",
+          "url": "https://samasyalink.vercel.app/"
+        }
+      ],
+      "screenshots": [
+        "/uploads/projects/samasya-desk-1.webp",
+        "/uploads/projects/samasya-mob-1.webp"
+      ]
+    },
+    {
+      "title": "Parasite (working name)",
+      "description": "An autonomous, semi-sentient character that lives on your desktop. It watches what you're doing, has its own memory and moods, and speaks whenever it feels like it, with no fixed schedule. I'm designing the character art myself and using only free tools.",
+      "tags": [
+        "In progress"
+      ],
+      "planet": "mars",
+      "image": "",
+      "links": [],
+      "screenshots": []
+    },
+    {
+      "title": "Upstream",
+      "description": "A single payments platform that combines four ideas, in priority order:\n1. Payouts for open-source maintainers\n2. Freelancer invoicing with automatic late-payment follow-ups (invoices go out without a separate approval step)\n3. Subscriptions\n4. Verified emergency crowdfunding",
+      "tags": [
+        "Hackathon",
+        "PayPal · Build What's Next with PayPal and AI 2026"
+      ],
+      "planet": "neptune",
+      "image": "",
+      "links": [
+        {
+          "label": "Live",
+          "url": "https://upstream-4nl2.onrender.com/"
+        }
+      ],
+      "screenshots": [
+        "/uploads/projects/upstream-desk-1.webp",
+        "/uploads/projects/upstream-desk-2.webp",
+        "/uploads/projects/upstream-desk-3.webp",
+        "/uploads/projects/upstream-desk-4.webp",
+        "/uploads/projects/upstream-mob-1.webp",
+        "/uploads/projects/upstream-mob-2.webp",
+        "/uploads/projects/upstream-mob-3.webp"
+      ]
+    },
+    {
+      "title": "Kitsune",
+      "description": "A \"GitHub for digital artists\" that gives artwork the kind of version control code already has.",
+      "tags": [
+        "Hackathon",
+        "Meta Global AI Developer Hackathon 2026"
+      ],
+      "planet": "jupiter",
+      "image": "",
+      "links": [
+        {
+          "label": "Live",
+          "url": "https://kitsune-zeta-smoky.vercel.app/"
+        }
+      ],
+      "screenshots": [
+        "/uploads/projects/kitsune-desk-1.webp",
+        "/uploads/projects/kitsune-mob-1.webp"
+      ]
     }
   ],
   "contact": {

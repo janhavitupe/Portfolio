@@ -419,69 +419,6 @@ a {
   margin-top: 1rem;
 }
 
-/* Sticker standing in the card's bottom-left corner, its flat bottom
-   edge always resting on the card's bottom edge. About.jsx sets
-   --corner-sticker-width from the skills block's height, so it grows
-   as skills are added; 190px is only the starting value. */
-.about-card {
-  --corner-sticker-width: 190px;
-}
-
-.about-corner-sticker {
-  position: absolute;
-  left: 1.5rem;
-  bottom: 0;
-  z-index: 2;
-  width: var(--corner-sticker-width);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
-  pointer-events: none;
-}
-
-/* Skills start just right of the sticker and move over as it grows */
-.about-skills {
-  margin-left: calc(var(--corner-sticker-width) + 4px);
-}
-
-.skills-heading {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 2px;
-  color: white;
-  margin: 2rem 0 1rem;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.skill-chip {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 1rem;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
-  font-size: 0.9rem;
-  color: white;
-  transition: 0.3s;
-}
-
-.skill-chip:hover {
-  border-color: var(--planet-color, #7dafff);
-  transform: translateY(-2px);
-}
-
-.skill-planet {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--planet-color);
-  box-shadow: 0 0 8px var(--planet-color);
-}
-
 /* Projects */
 .projects-grid {
   display: grid;
@@ -545,6 +482,7 @@ a {
   line-height: 1.7;
   font-size: 0.95rem;
   flex-grow: 1;
+  white-space: pre-line;
 }
 
 .project-tags {
@@ -1225,6 +1163,223 @@ a {
   object-fit: contain;
 }
 
-.about-card-plain p + p {
-  margin-top: 1rem;
+/* Mission Log page (/mission-log): Diana fixed on the left (never scrolls),
+   projects scroll on the right. The page leaves room for her column. */
+.projects-page {
+  --side-width: max(240px, 28vw);
+  min-height: 100vh;
+  padding-left: var(--side-width);
+}
+
+.projects-side {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: var(--side-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.projects-dancer {
+  max-height: 78vh;
+  max-width: 88%;
+  width: auto;
+  filter: drop-shadow(0 0 22px rgba(125, 175, 255, 0.35));
+}
+
+.projects-main {
+  padding: 3rem clamp(1rem, 4vw, 3.5rem) 4rem;
+  text-align: center;
+}
+
+.projects-back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #a9c8ff;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.projects-back:hover {
+  text-decoration: underline;
+}
+
+.projects-heading {
+  margin-bottom: 2.5rem;
+}
+
+/* One project: text on the left, a pile of screenshots on the right */
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 2rem;
+  text-align: left;
+  /* no overflow clipping: enlarged screenshots may spill over the card */
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.75rem;
+}
+
+.project-row-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.project-row-text {
+  color: #c4c4cc;
+  line-height: 1.7;
+  white-space: pre-line; /* keep line breaks, e.g. numbered lists */
+}
+
+.project-row-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.project-row-links .btn-outline {
+  padding: 0.45rem 1.2rem;
+  font-size: 0.85rem;
+}
+
+.project-shots {
+  position: relative;
+  min-height: 380px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.project-shots-planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  margin: -45px 0 0 -45px;
+}
+
+/* A cluttered pile: each screenshot scattered, tilted and see-through.
+   Hovering one makes it solid, straight and much bigger. It grows from the
+   point matching its place in the pile (left tiles grow rightwards, and so on),
+   so it stays under the cursor and spreads toward the middle. */
+.project-shot {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w, 40%);
+  transform-origin: var(--x) var(--y);
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  background: none;
+  overflow: hidden;
+  opacity: 0.55;
+  transform: translate(-50%, -50%) rotate(var(--r));
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+  cursor: zoom-in;
+  transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-shot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--ratio, 16 / 10);
+  object-fit: cover;
+}
+
+.project-shot:hover,
+.project-shot:focus-visible {
+  z-index: 20;
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg) scale(2.1);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.75), 0 0 30px rgba(125, 175, 255, 0.35);
+}
+
+/* Enlarged screenshot */
+.shot-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.85);
+  cursor: zoom-out;
+}
+
+.shot-lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(125, 175, 255, 0.3);
+}
+
+/* Phones and small tablets: Diana on top (not pinned), cards stacked */
+@media (max-width: 900px) {
+  .projects-page {
+    padding-left: 0;
+  }
+
+  .projects-side {
+    position: static;
+    width: auto;
+    padding-top: 2rem;
+    border-right: none;
+  }
+
+  .projects-dancer {
+    max-height: 260px;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+  }
+
+  .project-shots {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Mission Log editor bits in /admin */
+.admin-row > input.admin-link-label {
+  flex: 0 1 160px;
+}
+
+.admin-shots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.admin-shots li {
+  position: relative;
+}
+
+.admin-shots img {
+  width: 110px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-page .admin-shots button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 0 0.4rem;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.7);
+  line-height: 1.4;
 }
