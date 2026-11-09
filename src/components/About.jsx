@@ -1,19 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import content from "../content.json";
 
 // Width / height of embrsed-sticker.png, so its width can be worked out from a height
 const STICKER_RATIO = 568 / 594;
 
-// Each skill is shown as a small glowing "planet"
-const SKILLS = [
-  { name: "React", color: "#61dafb" },
-  { name: "JavaScript", color: "#f7df1e" },
-  { name: "Tailwind CSS", color: "#38bdf8" },
-  { name: "Python", color: "#ffd43b" },
-  { name: "FastAPI", color: "#22c55e" },
-  { name: "Streamlit", color: "#ff4b4b" },
-  { name: "Generative AI", color: "#c084fc" },
-  { name: "Astrophysics", color: "#7dafff" },
-];
+// Text and skills live in src/content.json (edit them from /admin in `npm run dev`).
+// Each skill is shown as a small glowing "planet".
+const { paragraphs: PARAGRAPHS, skills: SKILLS } = content.about;
 
 const About = () => {
   const cardRef = useRef(null);
@@ -54,24 +47,16 @@ const About = () => {
       >
         {/* Character sitting on the card's top edge */}
         <img src="/download_wipe_bg%20(1).png" alt="" className="about-sticker" />
-        <p>
-          I'm a frontend developer who spends as much time looking up at the
-          night sky as at a code editor. I love building interfaces that feel
-          alive, and I'm especially drawn to the place where artificial
-          intelligence meets the study of the universe.
-        </p>
-        <p>
-          Whether it's training a model, wiring up an API, or animating a
-          starfield, I enjoy turning big, curious ideas into things people can
-          actually use.
-        </p>
+        {PARAGRAPHS.map((text, i) => (
+          <p key={i}>{text}</p>
+        ))}
 
         {/* Skills sit to the right of the sticker in the card's bottom-left corner */}
         <div ref={skillsRef} className="about-skills">
           <h3 className="skills-heading">Skills in my orbit</h3>
           <ul className="skills-list">
-            {SKILLS.map((skill) => (
-              <li key={skill.name} className="skill-chip">
+            {SKILLS.map((skill, i) => (
+              <li key={i} className="skill-chip">
                 <span
                   className="skill-planet"
                   style={{ "--planet-color": skill.color }}

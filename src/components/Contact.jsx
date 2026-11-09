@@ -1,15 +1,13 @@
 import React from "react";
+import content from "../content.json";
 
-const CONTACT = {
-  email: "janhavitupe2005@gmail.com",
-  github: "https://github.com/janhavitupe",
-  linkedin: "https://www.linkedin.com/in/janhavi-tupe-148663328/",
-};
+// Contact details live in src/content.json (edit them from /admin in `npm run dev`)
+const CONTACT = content.contact;
 
 const Contact = () => {
   return (
     <section id="contact" className="section">
-      <p className="section-label">03 · Open Channel</p>
+      <p className="section-label">04 · Open Channel</p>
       <h2 className="section-title">Contact</h2>
 
       <div className="glass-card contact-card">
@@ -21,10 +19,7 @@ const Contact = () => {
             <span />
           </div>
         </div>
-        <p className="contact-text">
-          Have an idea, an opportunity, or just want to talk about black holes?
-          Send a signal and I'll get back to you at light speed.
-        </p>
+        <p className="contact-text">{CONTACT.text}</p>
 
         <a href={`mailto:${CONTACT.email}`} className="btn-primary">
           Send a Signal

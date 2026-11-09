@@ -1,0 +1,164 @@
+{
+  "hero": {
+    "name": "Janhavi Tupe",
+    "subtitle": "AIML | Full-Stack | Software | Explorer of the Cosmos",
+    "briefingTitle": "Hi, I'm Janhavi",
+    "briefingText": "I'm an IT undergrad at SPPU trynna test the waters of the tech world. I dabbled in frontend development back in school, spent my first three years of college exploring AI/ML and Data Science, and now I'm diving into Software Development.  I love to explore a lot. I tend to resemble a butterfly the way I flutter from one interest to another."
+  },
+  "about": {
+    "paragraphs": [
+      "I'm a frontend developer who spends as much time looking up at the night sky as at a code editor. I love building interfaces that feel alive, and I'm especially drawn to the place where artificial intelligence meets the study of the universe.",
+      "Whether it's training a model, wiring up an API, or animating a starfield, I enjoy turning big, curious ideas into things people can actually use."
+    ],
+    "skills": [
+      {
+        "name": "React",
+        "color": "#61dafb"
+      },
+      {
+        "name": "JavaScript",
+        "color": "#f7df1e"
+      },
+      {
+        "name": "Tailwind CSS",
+        "color": "#38bdf8"
+      },
+      {
+        "name": "Python",
+        "color": "#ffd43b"
+      },
+      {
+        "name": "FastAPI",
+        "color": "#22c55e"
+      },
+      {
+        "name": "Streamlit",
+        "color": "#ff4b4b"
+      },
+      {
+        "name": "Generative AI",
+        "color": "#c084fc"
+      },
+      {
+        "name": "Astrophysics",
+        "color": "#7dafff"
+      }
+    ]
+  },
+  "arsenal": {
+    "title": "Technical Arsenal",
+    "subtitle": "The tools and tech I build with",
+    "cards": [
+      {
+        "icon": "code",
+        "title": "Languages",
+        "color": "#3b82f6",
+        "items": [
+          "Python",
+          "Java",
+          "TypeScript",
+          "SQL",
+          "C++"
+        ]
+      },
+      {
+        "icon": "server",
+        "title": "Backend",
+        "color": "#22c55e",
+        "items": [
+          "FastAPI",
+          "Spring Boot",
+          "REST",
+          "Kafka"
+        ]
+      },
+      {
+        "icon": "bot",
+        "title": "AI / ML",
+        "color": "#a855f7",
+        "items": [
+          "Scikit-learn",
+          "LLMs",
+          "DQN",
+          "OpenCV"
+        ]
+      },
+      {
+        "icon": "database",
+        "title": "Data",
+        "color": "#f59e0b",
+        "items": [
+          "PostgreSQL",
+          "Spark",
+          "Redis",
+          "GEE"
+        ]
+      },
+      {
+        "icon": "cloud",
+        "title": "Cloud & DevOps",
+        "color": "#14b8a6",
+        "items": [
+          "AWS",
+          "Docker",
+          "Kubernetes",
+          "Azure"
+        ]
+      },
+      {
+        "icon": "monitor",
+        "title": "Frontend",
+        "color": "#ec4899",
+        "items": [
+          "React",
+          "Next.js",
+          "Tailwind CSS"
+        ]
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "SIH26043 — Problem Routing AI",
+      "description": "Smart India Hackathon platform that crowdsources societal challenges and uses AI to classify, prioritise, de-duplicate and route them to the right universities and industry partners.",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "Streamlit",
+        "Gemini"
+      ],
+      "link": "",
+      "planet": "jupiter",
+      "image": ""
+    },
+    {
+      "title": "Cosmic Portfolio",
+      "description": "This site! A space-themed portfolio with a live starfield, shooting stars, a drifting nebula and a spinning Saturn cursor.",
+      "tags": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "tsParticles"
+      ],
+      "link": "",
+      "planet": "neptune",
+      "image": ""
+    },
+    {
+      "title": "Next Mission",
+      "description": "Something new is on the launch pad. Check back soon to see what's landed here.",
+      "tags": [
+        "Coming soon"
+      ],
+      "link": "",
+      "planet": "mars",
+      "image": ""
+    }
+  ],
+  "contact": {
+    "text": "Have an idea, an opportunity, or just want to talk about black holes? Send a signal and I'll get back to you at light speed.",
+    "email": "janhavitupe2005@gmail.com",
+    "github": "https://github.com/janhavitupe",
+    "linkedin": "https://www.linkedin.com/in/janhavi-tupe-148663328/"
+  }
+}

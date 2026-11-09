@@ -799,3 +799,334 @@ a {
     animation: none;
   }
 }
+
+/* Project picture (used instead of the planet when a project has an image) */
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Owner-only editor at /admin (only exists in `npm run dev`) */
+.admin-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-header {
+  position: sticky;
+  top: 1rem;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(5, 5, 20, 0.85);
+}
+
+.admin-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-status {
+  font-size: 0.85rem;
+  color: #a9c8ff;
+}
+
+.admin-btn {
+  padding: 0.55rem 1.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-outline.admin-btn {
+  border: 2px solid white;
+}
+
+.admin-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none;
+}
+
+.admin-section {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.admin-section h3 {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #c4c4cc;
+}
+
+.admin-page input:not([type="color"]):not([type="file"]),
+.admin-page textarea,
+.admin-page select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.admin-page select option {
+  background: #0b0b1e;
+}
+
+.admin-page textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.admin-page input:focus,
+.admin-page textarea:focus,
+.admin-page select:focus {
+  outline: 2px solid #7dafff;
+  outline-offset: 1px;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-row > input:not([type="color"]) {
+  flex: 1 1 160px;
+  width: auto;
+}
+
+.admin-row input[type="color"] {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.admin-inline {
+  flex: 1 1 200px;
+}
+
+.admin-page button:not(.admin-btn) {
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.admin-page button:not(.admin-btn):hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.admin-page .admin-danger {
+  color: #fca5a5;
+  border-color: rgba(252, 165, 165, 0.4);
+}
+
+.admin-page .admin-add {
+  align-self: flex-start;
+  border-style: dashed;
+}
+
+.admin-project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.admin-project-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.admin-row-buttons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.admin-thumb {
+  width: 80px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Technical Arsenal: tinted category cards, two per row (one on phones).
+   Each card sets --tint to its own colour. */
+.arsenal-subtitle {
+  color: #c4c4cc;
+  margin: -1.75rem 0 2.5rem;
+}
+
+.arsenal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.arsenal-card {
+  padding: 1.5rem 1.6rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--tint, #7dafff) 9%, rgba(2, 4, 12, 0.82));
+  border: 1px solid color-mix(in srgb, var(--tint, #7dafff) 22%, transparent);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.arsenal-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--tint, #7dafff) 55%, transparent);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--tint, #7dafff) 25%, transparent);
+}
+
+.arsenal-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  font-size: 1.6rem;
+  line-height: 30px;
+  margin-bottom: 0.9rem;
+  color: #f4f4f5;
+}
+
+.arsenal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.arsenal-items {
+  color: #c4c4cc;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .arsenal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Arsenal editor in /admin */
+.admin-arsenal-card {
+  border-color: color-mix(in srgb, var(--tint, #7dafff) 35%, transparent);
+  background: color-mix(in srgb, var(--tint, #7dafff) 7%, transparent);
+}
+
+.admin-arsenal-name {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.admin-arsenal-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 1.1rem;
+  line-height: 20px;
+}
+
+.admin-icon-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.admin-page .admin-icon-picker button {
+  display: grid;
+  place-items: center;
+  padding: 0.45rem;
+}
+
+.admin-page .admin-icon-picker button.selected {
+  border-color: #7dafff;
+  background: rgba(125, 175, 255, 0.25);
+}
+
+.admin-page .admin-icon-picker .admin-emoji-input {
+  width: 4rem;
+  text-align: center;
+}
+
+.admin-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.admin-chips li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.3rem 0.2rem 0.75rem;
+  border-radius: 50px;
+  background: rgba(125, 175, 255, 0.12);
+  color: #dbe7ff;
+  font-size: 0.9rem;
+}
+
+.admin-page .admin-chips button {
+  padding: 0 0.45rem;
+  border: none;
+  border-radius: 50px;
+  background: transparent;
+  font-size: 1rem;
+  line-height: 1.4;
+}

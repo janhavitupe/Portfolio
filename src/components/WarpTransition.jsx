@@ -123,8 +123,11 @@ const WarpTransition = () => {
     // Only warp when the page actually changed. (This also skips the first
     // load, even though React runs effects twice on startup in development.)
     if (lastPath.current === pathname) return;
+    const fromPath = lastPath.current;
     lastPath.current = pathname;
     window.scrollTo(0, 0);
+    // No warp in or out of the owner's editor, so editing stays quick
+    if (pathname === "/admin" || fromPath === "/admin") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     setPhase("playing");
   }, [pathname]);
