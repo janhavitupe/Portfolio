@@ -7,8 +7,9 @@
   },
   "about": {
     "paragraphs": [
-      "I'm a frontend developer who spends as much time looking up at the night sky as at a code editor. I love building interfaces that feel alive, and I'm especially drawn to the place where artificial intelligence meets the study of the universe.",
-      "Whether it's training a model, wiring up an API, or animating a starfield, I enjoy turning big, curious ideas into things people can actually use."
+      "I'm Janhavi, a final-year Information Technology engineering student and software developer who enjoys building things that sit at the intersection of engineering, data and intelligence.",
+      "My interests lie in backend engineering, distributed systems, applied machine learning and AI-powered applications. I enjoy working on problems that require more than just implementing a feature — understanding the underlying system, figuring out how its components interact, and designing solutions that are reliable, scalable and practical.",
+      "I'm constantly learning, building and questioning how things can be made better. For me, engineering is as much about understanding problems as it is about writing code."
     ],
     "skills": [
       {
@@ -47,72 +48,148 @@
   },
   "arsenal": {
     "title": "Technical Arsenal",
-    "subtitle": "The tools and tech I build with",
+    "quote": "It's not much, but I try to expand my skills",
+    "image": "/embrsed-sticker.png",
     "cards": [
       {
         "icon": "code",
-        "title": "Languages",
         "color": "#3b82f6",
+        "title": "Programming Languages",
         "items": [
           "Python",
           "Java",
+          "JavaScript",
           "TypeScript",
           "SQL",
+          "C",
           "C++"
         ]
       },
       {
         "icon": "server",
-        "title": "Backend",
         "color": "#22c55e",
+        "title": "Backend Development",
         "items": [
           "FastAPI",
           "Spring Boot",
-          "REST",
-          "Kafka"
-        ]
-      },
-      {
-        "icon": "bot",
-        "title": "AI / ML",
-        "color": "#a855f7",
-        "items": [
-          "Scikit-learn",
-          "LLMs",
-          "DQN",
-          "OpenCV"
+          "Spring Data JPA",
+          "Hibernate",
+          "Express.js",
+          "REST APIs",
+          "Microservices",
+          "API Gateway",
+          "OpenAPI",
+          "JWT",
+          "OAuth"
         ]
       },
       {
         "icon": "database",
-        "title": "Data",
         "color": "#f59e0b",
+        "title": "Databases",
         "items": [
           "PostgreSQL",
-          "Spark",
+          "MySQL",
+          "SQLite",
+          "MongoDB",
           "Redis",
-          "GEE"
+          "Prisma",
+          "SQL",
+          "Relational Data Modelling"
         ]
       },
       {
-        "icon": "cloud",
-        "title": "Cloud & DevOps",
-        "color": "#14b8a6",
+        "icon": "bot",
+        "color": "#a855f7",
+        "title": "AI / Machine Learning",
         "items": [
-          "AWS",
-          "Docker",
-          "Kubernetes",
-          "Azure"
+          "Scikit-learn",
+          "LightGBM",
+          "Random Forest",
+          "Isolation Forest",
+          "Deep Q-Networks (DQN)",
+          "Sentence Transformers",
+          "LLMs",
+          "AI Agents",
+          "Tool Calling",
+          "Gemini API"
+        ]
+      },
+      {
+        "icon": "globe",
+        "color": "#06b6d4",
+        "title": "Data Engineering & Geospatial",
+        "items": [
+          "Apache Kafka",
+          "Apache Spark",
+          "Google Earth Engine",
+          "Sentinel-5P TROPOMI",
+          "ERA5",
+          "Data Pipelines",
+          "Feature Engineering"
+        ]
+      },
+      {
+        "icon": "eye",
+        "color": "#ef4444",
+        "title": "Computer Vision",
+        "items": [
+          "OpenCV",
+          "MediaPipe",
+          "Image Segmentation",
+          "Optical Flow",
+          "FFT-based Feature Extraction"
         ]
       },
       {
         "icon": "monitor",
-        "title": "Frontend",
         "color": "#ec4899",
+        "title": "Frontend Development",
         "items": [
           "React",
           "Next.js",
           "Tailwind CSS"
+        ]
+      },
+      {
+        "icon": "cloud",
+        "color": "#14b8a6",
+        "title": "Cloud & DevOps",
+        "items": [
+          "AWS (S3, Lambda)",
+          "Microsoft Azure",
+          "Docker",
+          "Kubernetes",
+          "GitHub Actions",
+          "Jenkins",
+          "Render",
+          "Vercel"
+        ]
+      },
+      {
+        "icon": "activity",
+        "color": "#84cc16",
+        "title": "Monitoring & Testing",
+        "items": [
+          "Prometheus",
+          "Grafana",
+          "ELK Stack",
+          "pytest",
+          "Unit Testing",
+          "Integration Testing",
+          "End-to-End Testing"
+        ]
+      },
+      {
+        "icon": "book",
+        "color": "#6366f1",
+        "title": "Core Computer Science",
+        "items": [
+          "Data Structures & Algorithms",
+          "Object-Oriented Programming",
+          "Design Patterns",
+          "Debugging",
+          "Database Management Systems"
         ]
       }
     ]

@@ -3,6 +3,19 @@ import React from "react";
 // Line icons for the Technical Arsenal cards (24×24, drawn with the current text colour).
 // A card's `icon` is one of these names, or any emoji / text, which is shown as-is.
 export const ICONS = {
+  eye: (
+    <>
+      <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" />
+      <circle cx="12" cy="12" r="3" />
+    </>
+  ),
+  activity: <path d="M22 12h-4l-3 9L9 3l-3 9H2" />,
+  globe: (
+    <>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </>
+  ),
   code: (
     <>
       <path d="m18 16 4-4-4-4" />

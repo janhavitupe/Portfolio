@@ -215,7 +215,33 @@ const Admin = () => {
       <section className="glass-card admin-section">
         <h2>Technical Arsenal</h2>
         <Field label="Section title" value={arsenal.title} onChange={(v) => set(["arsenal", "title"], v)} />
-        <Field label="Subtitle (optional)" value={arsenal.subtitle} onChange={(v) => set(["arsenal", "subtitle"], v)} />
+        <Field label="Speech bubble text (leave empty to hide)" value={arsenal.quote} onChange={(v) => set(["arsenal", "quote"], v)} />
+        <div className="admin-row">
+          <label className="admin-field admin-inline">
+            <span>Sticker on the panel edge (works best with a flat bottom edge)</span>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                setStatus("Uploading image…");
+                try {
+                  set(["arsenal", "image"], await uploadImage(file));
+                  setStatus("Image uploaded. Remember to save.");
+                } catch (err) {
+                  setStatus(`Upload failed: ${err.message}`);
+                }
+              }}
+            />
+          </label>
+          {arsenal.image && (
+            <>
+              <img src={arsenal.image} alt="" className="admin-thumb admin-thumb-contain" />
+              <button type="button" className="admin-danger" onClick={() => set(["arsenal", "image"], "")}>Remove sticker</button>
+            </>
+          )}
+        </div>
 
         {arsenal.cards.map((card, i) => (
           <div key={i} className="admin-project admin-arsenal-card" style={{ "--tint": card.color }}>
