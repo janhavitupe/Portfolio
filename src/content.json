@@ -175,22 +175,11 @@
         }
       ],
       "screenshots": [
-        "/uploads/projects/ecotrack-desk-1.webp",
-        "/uploads/projects/ecotrack-desk-2.webp",
-        "/uploads/projects/ecotrack-desk-3.webp"
+        "/uploads/Screenshot-2026-11-12-134712-1794471492609.png",
+        "/uploads/Screenshot-2026-11-12-134554-1794471492638.png",
+        "/uploads/Screenshot-2026-11-12-134542-1794471492653.png",
+        "/uploads/Screenshot-2026-11-12-134520-1794471492687.png"
       ]
-    },
-    {
-      "title": "CO₂ Training-Strategy Study",
-      "description": "A modeling project that compares rotation and seasonal-swapping training strategies for CO₂ prediction.",
-      "tags": [
-        "Research",
-        "In progress"
-      ],
-      "planet": "mars",
-      "image": "",
-      "links": [],
-      "screenshots": []
     },
     {
       "title": "SamasyaLink",
@@ -209,8 +198,12 @@
         }
       ],
       "screenshots": [
-        "/uploads/projects/samasya-desk-1.webp",
-        "/uploads/projects/samasya-mob-1.webp"
+        "/uploads/Screenshot-2026-11-12-150155-1794475963691.png",
+        "/uploads/Screenshot-2026-11-12-150138-1794475963703.png",
+        "/uploads/Screenshot-2026-11-12-145949-1794475963722.png",
+        "/uploads/Screenshot-2026-11-12-145845-1794475963739.png",
+        "/uploads/Screenshot-2026-11-12-145713-1794475963774.png",
+        "/uploads/Screenshot-2026-11-12-145649-1794475963788.png"
       ]
     },
     {
@@ -222,7 +215,10 @@
       "planet": "mars",
       "image": "",
       "links": [],
-      "screenshots": []
+      "screenshots": [
+        "/uploads/Screenshot-2026-11-12-145034-1794475266859.png",
+        "/uploads/Screenshot-2026-11-12-133808-1794475328936.png"
+      ]
     },
     {
       "title": "Upstream",
@@ -240,13 +236,12 @@
         }
       ],
       "screenshots": [
-        "/uploads/projects/upstream-desk-1.webp",
-        "/uploads/projects/upstream-desk-2.webp",
-        "/uploads/projects/upstream-desk-3.webp",
-        "/uploads/projects/upstream-desk-4.webp",
-        "/uploads/projects/upstream-mob-1.webp",
-        "/uploads/projects/upstream-mob-2.webp",
-        "/uploads/projects/upstream-mob-3.webp"
+        "/uploads/Screenshot-2026-11-12-145448-1794475572253.png",
+        "/uploads/Screenshot-2026-11-12-145436-1794475572268.png",
+        "/uploads/Screenshot-2026-11-12-145423-1794475572281.png",
+        "/uploads/Screenshot-2026-11-12-145359-1794475572294.png",
+        "/uploads/Screenshot-2026-11-12-145346-1794475572313.png",
+        "/uploads/Screenshot-2026-11-12-145330-1794475572340.png"
       ]
     },
     {
@@ -265,8 +260,11 @@
         }
       ],
       "screenshots": [
-        "/uploads/projects/kitsune-desk-1.webp",
-        "/uploads/projects/kitsune-mob-1.webp"
+        "/uploads/Screenshot-2026-11-12-144837-1794475153723.png",
+        "/uploads/Screenshot-2026-11-12-144814-1794475153775.png",
+        "/uploads/Screenshot-2026-11-12-144751-1794475153794.png",
+        "/uploads/Screenshot-2026-11-12-144941-1794475193358.png",
+        "/uploads/Screenshot-2026-11-12-144924-1794475193369.png"
       ]
     }
   ],
